@@ -20,13 +20,14 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
     font-size: 16px;
     font-family: Verdana, Arial, sans-serif;
     line-height: 1.6;
-    color: #666;
-    border: 1px solid #009be3;
+    color: #eee;
+    //border: 1px solid #009be3;
     background-color: #eee;
+    opacity: 0.75;
 }
 
 .jp-audio {
-    width: 420px;
+    top: 0;
 }
 
 .jp-audio-stream {
@@ -82,20 +83,20 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 
 .jp-interface {
     position: relative;
-    background-color: #eee;
+    //background-color: #343a40;
     width: 100%;
 }
 
 .jp-audio .jp-interface {
-    height: 80px;
+    height: 63px;
 }
 
 .jp-audio-stream .jp-interface {
-    height: 80px;
+    height: 63px;
 }
 
 .jp-video .jp-interface {
-    border-top: 1px solid #009be3;
+    //border-top: 1px solid #009be3;
 }
 
 /* @group CONTROLS */
@@ -116,7 +117,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 }
 
 .jp-audio .jp-controls {
-    width: 380px;
+    width: 440px;
     padding: 20px 20px 0 20px;
 }
 
@@ -148,6 +149,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
     text-indent: -9999px;
     border: none;
     cursor: pointer;
+    transform: scale(0.75, 0.75);
 }
 
 .jp-play {
@@ -219,7 +221,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 
 .jp-audio .jp-type-single .jp-progress {
     left: 110px;
-    width: 186px;
+    width: 300px;
 }
 
 .jp-audio .jp-type-playlist .jp-progress {
@@ -249,7 +251,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 
 /* The seeking class is added/removed inside jPlayer */
 .jp-seeking-bg {
-    background: url("#{$jplayer-images-base-url}jplayer.blue.monday.seeking.gif");
+    background: url("#{$jplayer-images-base-url}jplayer.seeking.gif");
 }
 
 /* @end */
@@ -262,9 +264,9 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 
 .jp-volume-controls {
     position: absolute;
-    top: 32px;
-    left: 308px;
-    width: 200px;
+    top: 26px;
+    left: 30px;
+    width: 500px;
 }
 
 .jp-audio-stream .jp-volume-controls {
@@ -292,7 +294,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 }
 
 .jp-volume-max {
-    left: 74px;
+    left: 133px;
 }
 
 .jp-mute {
@@ -325,7 +327,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
     background: url("#{$jplayer-images-base-url}jplayer.jpg") 0 -250px repeat-x;
     top: 5px;
     left: 22px;
-    width: 46px;
+    width: 100px;
     height: 5px;
     cursor: pointer;
 }
@@ -360,10 +362,10 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
     width: 60px;
     font-size: .64em;
     font-style: oblique;
+    color: #212529;
 }
 
 .jp-current-time {
-    float: left;
     display: inline;
     cursor: default;
 }
@@ -381,6 +383,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 
 .jp-video .jp-duration {
     margin-right: 20px;
+    color: #212529;
 }
 
 /* @end */
@@ -396,7 +399,7 @@ $jplayer-images-base-url: "../images/jplayer/blueMonday/" !default;
 .jp-details,
 .jp-playlist {
     width: 100%;
-    background-color: #ccc;
+    background-color: #55606b;
     border-top: 1px solid #009be3;
 }
 
@@ -519,14 +522,14 @@ span.jp-artist {
     margin-top: -50px;
     left: 50%;
     top: 50%;
-    background: url("#{$jplayer-images-base-url}jplayer.blue.monday.video.play.png") 0 0 no-repeat;
+    background: url("#{$jplayer-images-base-url}jplayer.video.play.png") 0 0 no-repeat;
     text-indent: -9999px;
     border: none;
     cursor: pointer;
 }
 
 .jp-video-play-icon:focus {
-    background: url("#{$jplayer-images-base-url}jplayer.blue.monday.video.play.png") 0 -100px no-repeat;
+    background: url("#{$jplayer-images-base-url}jplayer.video.play.png") 0 -100px no-repeat;
 }
 
 
@@ -573,7 +576,8 @@ span.jp-artist {
 }
 
 .jp-toggles button {
-    display: block;
+    //Hiding this to hide the repeat button. If any other toggle button needs to be visible, this should be done differently.
+    display: none;
     float: left;
     width: 25px;
     height: 18px;

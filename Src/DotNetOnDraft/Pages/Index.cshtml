@@ -1,8 +1,6 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
+
 
 @section Styles  {
     <style type="text/css">
@@ -30,3 +28,28 @@
     <p>Tristique nulla aliquet enim tortor at. Mattis aliquam faucibus purus in massa tempor nec feugiat. Dui nunc mattis enim ut tellus elementum sagittis vitae. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Integer feugiat scelerisque varius morbi enim nunc. Aliquet bibendum enim facilisis gravida. Nulla facilisi cras fermentum odio. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Pharetra magna ac placerat vestibulum lectus mauris ultrices eros. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Est lorem ipsum dolor sit amet consectetur. Eu augue ut lectus arcu bibendum at varius vel pharetra. Pharetra sit amet aliquam id. Ultrices gravida dictum fusce ut. Maecenas sed enim ut sem viverra aliquet eget sit amet. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit sed.</p>
     <p>Ultrices eros in cursus turpis massa tincidunt. Massa ultricies mi quis hendrerit dolor magna eget est. Id eu nisl nunc mi ipsum faucibus vitae aliquet nec. Pellentesque elit eget gravida cum sociis natoque penatibus et magnis. Porttitor rhoncus dolor purus non. Ac feugiat sed lectus vestibulum mattis. Nunc consequat interdum varius sit amet mattis vulputate. Elementum sagittis vitae et leo duis ut diam quam. Ornare arcu dui vivamus arcu felis bibendum ut. Nibh ipsum consequat nisl vel pretium lectus quam id leo. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Faucibus scelerisque eleifend donec pretium. Consequat mauris nunc congue nisi. Est ullamcorper eget nulla facilisi etiam dignissim diam quis. Hendrerit dolor magna eget est lorem ipsum dolor sit. Leo duis ut diam quam nulla. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor.</p>
 </div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            $('.nav-container').removeClass('sticky');
+            $('.nav-container').addClass('move-up');
+
+            var sticky = $('.nav-container').prop('offsetTop');
+
+            window.onscroll = function () {
+                if (window.pageYOffset > sticky) {
+                    $('.nav-container').addClass('sticky');
+                    $('.nav-container').removeClass('move-up');
+                    $('main').addClass('pad-top');
+                    $('.jp-audio').css('opacity', '1');
+                } else {
+                    $('.nav-container').removeClass('sticky');
+                    $('.nav-container').addClass('move-up');
+                    $('main').removeClass('pad-top');
+                    $('.jp-audio').css('opacity', '0.75');
+                }
+            };
+        });
+    </script>
+}

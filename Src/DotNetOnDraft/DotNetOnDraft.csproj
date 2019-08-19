@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="site.css" />
-    <Content Include="site.js" />
+    <Content Include="css\site.css" />
+    <Content Include="js\site.js" />
   </ItemGroup>
 
 

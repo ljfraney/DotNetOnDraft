@@ -1,9 +1,19 @@
-﻿/// <binding BeforeBuild='default' ProjectOpened='default' />
-const { src, dest, parallel } = require('gulp');
+﻿/// <binding BeforeBuild='default' ProjectOpened='default' /> 
+const { src, dest, series, parallel, watch } = require('gulp');
 const uglify = require('gulp-uglify');
 const pipeline = require('readable-stream').pipeline;
 const cleanCSS = require('gulp-clean-css');
 const sass = require('gulp-sass');
+const del = require('del');
+
+var fileWatchConfig = [
+    'js/**/*.js',
+    '!js/**/*.min.js',
+    'css/**/*.css',
+    'css/**/*.scss'
+];
+
+watch(fileWatchConfig, {}, parallel(copy, compress));
 
 function copy(cb) {
     console.log('Copying bootstrap files...');
@@ -27,22 +37,29 @@ function copy(cb) {
 
 function compress(cb) {
     pipeline(
-        src('site.js'),
+        src('js/site.js'),
         uglify(),
         dest('wwwroot/js')
     );
 
-    src('site.css')
+    src('css/site.css')
         .pipe(cleanCSS({ debug: true }, (details) => {
             console.log(`${details.name} minified from ${details.stats.originalSize} bytes to ${details.stats.minifiedSize} bytes.`);
         }))
         .pipe(dest('wwwroot/css'));
 
-    src('jplayer.scss')
+    src('css/jplayer.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(dest('wwwroot/css'));
 
     cb();
 }
+
+function clean(cb) {
+    del(['wwwroot/lib/', 'wwwroot/css/site.css', 'wwwroot/css/jplayer.css']);
+    cb();
+}
+
+exports.clean = parallel(clean);
 
 exports.default = parallel(copy, compress);

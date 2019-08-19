@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ljfraney/DotNetOnDraft#readme",
   "devDependencies": {
+    "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",

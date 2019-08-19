@@ -58,3 +58,21 @@ body {
      width: 100%;
      background-color: black;
  }
+
+ .nav-container {
+     width: 100%;
+ }
+
+.sticky {
+    position: fixed;
+    top: 0;
+}
+
+.move-up {
+    position: relative;
+    top: -108px;
+}
+
+.pad-top {
+    padding-top: 178px;
+}
