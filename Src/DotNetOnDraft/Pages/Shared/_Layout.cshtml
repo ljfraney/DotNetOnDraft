@@ -55,6 +55,9 @@
                                 <button class="jp-repeat" role="button" tabindex="0">repeat</button>
                             </div>
                         </div>
+                        <div class="playlist-button-container">
+                            <i class="playlist-button far fa-list-alt"></i>
+                        </div>
                     </div>
                     <div class="jp-details">
                         <div class="jp-title" aria-label="title">&nbsp;</div>
@@ -184,6 +187,10 @@
                     btn.addClass('fa-play-circle');
                     btn.removeClass('fa-pause-circle');
                 }
+            });
+
+            $('.playlist-button').click(function () {
+                alert('Playlist opened!');
             });
         });
     </script>

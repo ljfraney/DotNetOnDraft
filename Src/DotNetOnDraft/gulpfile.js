@@ -13,7 +13,7 @@ var fileWatchConfig = [
     'css/**/*.scss'
 ];
 
-watch(fileWatchConfig, {}, parallel(copy, compress));
+watch(fileWatchConfig, {}, parallel(compress));
 
 function copy(cb) {
     console.log('Copying bootstrap files...');

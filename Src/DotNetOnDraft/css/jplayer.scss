@@ -50,6 +50,13 @@ $lt-blue: #00a1ff;
                 }
             }
 
+            @media screen and (max-width: 600px) {
+                .jp-volume-bar {
+                    width: 50px;
+                    top: 3px;
+                }
+            }
+
             .jp-mute {
                 display: block;
                 float: left;
@@ -59,17 +66,17 @@ $lt-blue: #00a1ff;
                 display: block;
                 float: right;
             }
-
-            @media screen and (max-width: 650px) {
-                .jp-mute, .jp-volume-max {
-                    display: none;
-                }
-            }
         }
 
         @media screen and (max-width: 800px) {
             .jp-volume-controls {
                 width: 135px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .jp-volume-controls {
+                width: 100px;
             }
         }
 
@@ -132,9 +139,36 @@ $lt-blue: #00a1ff;
                 }
             }
 
+            @media screen and (max-width: 860px) {
+                .jp-progress {
+                    width: 350px;
+                }
+            }
+
             @media screen and (max-width: 800px) {
                 .jp-progress {
                     width: 300px;
+                }
+            }
+
+            @media screen and (max-width: 600px) {
+                .jp-progress {
+                    width: 200px;
+                }
+            }
+        }
+
+        .playlist-button-container {
+            margin-left: 25px;
+
+            .playlist-button {
+                font-size: 3em;
+                cursor: pointer;
+            }
+
+            @media screen and (max-width: 767px) {
+                .playlist-button {
+                    font-size: 2em;
                 }
             }
         }
