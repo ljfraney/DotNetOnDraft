@@ -135,6 +135,27 @@
 
     <script type="text/javascript">
         $(function () {
+            $.ajax('@Url.Action("Index","Rss")')
+                .done(function (result) {
+                    if (result && result.channel && result.channel.item && result.channel.item.length) {
+                        for (let i = 0; i < result.channel.item.length; i++) {
+                            let item = result.channel.item[i];
+                            console.log(item.title);
+                            console.log(item.description);
+                            console.log(item.link);
+                            console.log(item.pubDate);
+                            console.log(item.enclosure.url);
+                            console.log(item.enclosure.type);
+                        }
+                    }
+                    else {
+                        alert('rss feed was in an unexpected format')
+                    }
+                })
+                .fail(function() {
+                    alert( "error retrieving rss feed" );
+                });
+
             $("#jquery_jplayer_1").jPlayer({
                 ready: function () {
                     $(this).jPlayer("setMedia", {
