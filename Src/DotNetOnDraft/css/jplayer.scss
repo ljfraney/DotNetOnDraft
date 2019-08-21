@@ -4,6 +4,11 @@ $menu-lighter2: #4e565f;
 $text-color: #e2e2e2;
 $lt-blue: #00a1ff;
 
+i[role="button"] {
+    cursor: pointer;
+    outline: none;
+}
+
 .jp-audio {
     background-color: $menu-lighter1;
     color: $text-color;
@@ -14,10 +19,6 @@ $lt-blue: #00a1ff;
         justify-content: center;
         align-items: center;
         padding: 10px;
-
-        i[role="button"] {
-            cursor: pointer;
-        }
 
         .jp-toggles {
             display: none;
@@ -53,7 +54,6 @@ $lt-blue: #00a1ff;
             @media screen and (max-width: 600px) {
                 .jp-volume-bar {
                     width: 50px;
-                    top: 3px;
                 }
             }
 
@@ -89,18 +89,14 @@ $lt-blue: #00a1ff;
             .jp-controls {
                 margin-right: 25px;
 
-                .jp-play {
+                .play-button {
                     font-size: 3em;
                 }
 
                 @media screen and (max-width: 767px) {
-                    .jp-play {
+                    .play-button {
                         font-size: 2em;
                     }
-                }
-
-                .jp-stop {
-                    display: none;
                 }
             }
 
